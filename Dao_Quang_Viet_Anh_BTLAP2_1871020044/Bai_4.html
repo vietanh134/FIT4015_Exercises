@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý giỏ hàng</title>
+    <style>
+        .product-list {
+            margin-bottom: 20px;
+        }
+        .cart {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Quản lý giỏ hàng</h2>
+    
+    <div class="product-list">
+        <div>
+            <span>Sản phẩm 1</span>
+            <button onclick="addToCart('Sản phẩm 1')">Thêm vào giỏ hàng</button>
+        </div>
+        <div>
+            <span>Sản phẩm 2</span>
+            <button onclick="addToCart('Sản phẩm 2')">Thêm vào giỏ hàng</button>
+        </div>
+        <div>
+            <span>Sản phẩm 3</span>
+            <button onclick="addToCart('Sản phẩm 3')">Thêm vào giỏ hàng</button>
+        </div>
+    </div>
+
+    <div class="cart">
+        <h3>Giỏ hàng:</h3>
+        <ul id="cartList"></ul>
+        <p>Tổng số sản phẩm: <span id="totalItems">0</span></p>
+    </div>
+
+    <script>
+        let cart = [];
+        
+        function addToCart(productName) {
+            cart.push(productName);
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartList = document.getElementById('cartList');
+            const totalItems = document.getElementById('totalItems');
+            
+            cartList.innerHTML = '';
+            cart.forEach(product => {
+                const li = document.createElement('li');
+                li.textContent = product;
+                cartList.appendChild(li);
+            });
+            
+            totalItems.textContent = cart.length;
+        }
+    </script>
+</body>
+</html>

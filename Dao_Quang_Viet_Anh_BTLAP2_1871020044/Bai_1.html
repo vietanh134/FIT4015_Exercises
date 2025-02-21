@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bộ đếm thời gian</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #timer {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+        #message {
+            font-size: 24px;
+            color: red;
+            font-weight: bold;
+            display: none;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        input {
+            padding: 11px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bộ đếm thời gian</h1>
+    <input type="number" id="timeInput" placeholder="Nhập số giây" min="1">
+    <button onclick="startTimer()">Bắt đầu</button>
+    <button onclick="pauseTimer()">Tạm dừng</button>
+    <button onclick="resetTimer()">Đặt lại</button>
+    <div id="timer">00:00</div>
+    <div id="message">Time Up!</div>
+    <script>
+        let countdown;
+        let timeLeft = 0;
+        function startTimer() {
+            if (countdown) clearInterval(countdown);
+            let input = document.getElementById("timeInput").value;
+            if (!input || input <= 0) return;
+            timeLeft = parseInt(input);
+            document.getElementById("message").style.display = "none"; // Ẩn thông báo khi bắt đầu
+            updateDisplay();
+            countdown = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    updateDisplay();
+                } else {
+                    clearInterval(countdown);
+                    document.getElementById("message").style.display = "block"; // Hiện thông báo
+                }
+            }, 1000);
+        }
+        function pauseTimer() {
+            clearInterval(countdown);
+        }
+        function resetTimer() {
+            clearInterval(countdown);
+            timeLeft = 0;
+            updateDisplay();
+            document.getElementById("message").style.display = "none"; // Ẩn thông báo khi đặt lại
+        }
+        function updateDisplay() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            document.getElementById("timer").innerText = 
+                `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+    </script>
+</body>
+</html>
