@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanh Mobile</title>
+    <link rel="stylesheet" href="c.css">
+    <script>
+        function checkLogin() {
+            alert('Bạn cần phải đăng nhập');
+        }
+    </script>
+    <style>
+        header {
+    background-color: #ff4359;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    margin-left: 20px;
+}
+
+/* Tách menu sang phải */
+nav {
+    margin-left: auto;
+    margin-right: 80px; /* Đẩy menu gần icon hơn */
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+/* Icon đăng nhập giữ nguyên vị trí phải */
+.login-icon {
+    margin-right: 30px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-icon:hover {
+    color: #ffc107;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Vanh Mobile</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="checkLogin()">Trang chủ</a></li>
+                <li><a href="#" onclick="checkLogin()">Giới thiệu</a></li>
+                <li><a href="#" onclick="checkLogin()">Liên hệ</a></li>
+                <li><a href="#" onclick="checkLogin()">Giỏ hàng (0)</a></li>
+            </ul>
+        </nav>
+        <a href="dn.html" class="login-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" alt="Đăng nhập" width="35px">
+        </a>
+        
+    </header>
+
+    <div class="banner">
+        <img src="anh7.png" alt="Banner" class="banner-img">
+    </div>
+
+    <section class="products">
+        <h2>Sản phẩm nổi bật</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="./may1.png" alt="iPhone 13" height="250px" width="150px">
+                <h3>iPhone 13</h3>
+                <p>Giá: 16,000,000 VNĐ</p>
+                <a href="#" class="add-to-cart" onclick="checkLogin()">Chi tiết</a>
+            </div>
+            <div class="product-item">
+                <img src="./anh8.png" alt="iPhone 14" height="250px" width="150px">
+                <h3>iPhone 14</h3>
+                <p>Giá: 18,000,000 VNĐ</p>
+                <a href="#" class="add-to-cart" onclick="checkLogin()">Chi tiết</a>
+            </div>
+            <div class="product-item">
+                <img src="./anh9.png" alt="iPhone 15" height="250px" width="150px">
+                <h3>iPhone 15</h3>
+                <p>Giá: 20,000,000 VNĐ</p>
+                <a href="#" class="add-to-cart" onclick="checkLogin()">Chi tiết</a>
+            </div>
+            <div class="product-item">
+                <img src="./anh4.png" alt="iPhone 16" height="250px" width="150px">
+                <h3>iPhone 16</h3>
+                <p>Giá: 22,000,000 VNĐ</p>
+                <a href="#" class="add-to-cart" onclick="checkLogin()">Chi tiết</a>
+            </div>
+            <div class="product-item">
+                <img src="./anh6.png" alt="iPhone 16 Pro Max" height="250px" width="150px">
+                <h3>iPhone 16 Pro Max</h3>
+                <p>Giá: 32,000,000 VNĐ</p>
+                <a href="#" class="add-to-cart" onclick="checkLogin()">Chi tiết</a>
+            </div>
+            <div class="product-item">
+                <img src="./anh3.png" alt="Galaxy S25 Ultra" height="250px" width="150px">
+                <h3>Galaxy S25 Ultra</h3>
+                <p>Giá: 32,000,000 VNĐ</p>
+                <a href="#" class="add-to-cart" onclick="checkLogin()">Chi tiết</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>Vanh Mobile</h3>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#" onclick="checkLogin()">Điều khoản sử dụng</a></li>
+                    <li><a href="#" onclick="checkLogin()">Chính sách bảo mật</a></li>
+                    <li><a href="#" onclick="checkLogin()">Hỗ trợ khách hàng</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/viet.anh.183298?locale=vi_VN">Facebook</a>
+                <a href="https://www.instagram.com/Viet%20anh/">Instagram</a>
+                <a href="#">Zalo</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
